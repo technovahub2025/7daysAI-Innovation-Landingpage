@@ -33,7 +33,7 @@ const Home = () => {
           </p>
 
           <motion.a
-            href="#"
+            href="/welcome"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"

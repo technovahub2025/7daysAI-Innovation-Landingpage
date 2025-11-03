@@ -1,21 +1,35 @@
-import React from 'react'
-import { BrowserRouter, Routes,Route } from 'react-router-dom'
-import Home from './pages/Home'
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import Landingpage from "./pages/Landingpage";
+import Navbar from "./components/Navbar";
+
+// Wrapper to handle conditional Navbar
+const AppContent = () => {
+  const location = useLocation();
+
+  // Hide Navbar only on '/welcome'
+  const hideNavbar = location.pathname === "/";
+
+  return (
+    <>
+      {!hideNavbar && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/welcome" element={<Landingpage />} />
+      </Routes>
+    </>
+  );
+};
 
 const App = () => {
   return (
-    <div className=' p-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50'>
+    <div className="p-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen">
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/about' element={<h1 className='text-3xl font-bold underline'>About Page</h1>} />
-        </Routes>
+        <AppContent />
       </BrowserRouter>
-
-    
-    
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
