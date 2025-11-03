@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Landingpage from "./pages/Landingpage";
 import Navbar from "./components/Navbar";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 // Wrapper to handle conditional Navbar
 const AppContent = () => {
@@ -13,7 +14,12 @@ const AppContent = () => {
 
   return (
     <>
-      {!hideNavbar && <Navbar />}
+     {!hideNavbar && (
+  <>
+    <Navbar />
+    <WhatsAppButton fixed />
+  </>
+)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<Landingpage />} />

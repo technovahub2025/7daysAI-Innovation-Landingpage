@@ -6,6 +6,7 @@ import PricingCard from '../components/PricingCard'
 import Eligibility from '../components/Eligibility'
 import Contact from '../components/Contact'
 
+
 const Landingpage = () => {
   return (
     <div className='max-w-7xl mx-auto'>
@@ -14,7 +15,9 @@ const Landingpage = () => {
         <Takeaways/>
         <PricingCard/>
         <Eligibility/>
+       
         <Contact/>
+      
     </div>
   )
 }

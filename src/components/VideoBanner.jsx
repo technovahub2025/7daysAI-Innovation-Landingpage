@@ -1,56 +1,74 @@
 import React from "react";
+import { motion } from "framer-motion";
 import sample1 from "../assets/banner4.mp4";
 import sample2 from "../assets/banner2.mp4";
 import sample3 from "../assets/banner1.mp4";
 import sample4 from "../assets/banner4.mp4";
 import sample5 from "../assets/banner4.mp4";
 
-
+const videos = [
+  { src: sample1, title: "Artificial Intelligence", desc: "Workshop @ Technovahub • 2025", big: true },
+  { src: sample2, title: "AI Lab", desc: "Hands-on Demo" },
+  { src: sample3, title: "Machine Learning", desc: "Interactive Projects" },
+  { src: sample4, title: "Robotics & Vision", desc: "Future Tech" },
+  { src: sample5, title: "Generative AI", desc: "Creative Intelligence" },
+];
 
 const VideoBanner = () => {
   return (
-    <section className="py-10 md:px-4 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto mt-10">
-       
+    <section className="relative py-16 px-6 mt-[100px] overflow-hidden">
+      {/* Light Background Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.1),transparent_60%)]"></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">
+            Experience the{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Future of AI
+            </span>
+          </h2>
+          <p className="text-gray-600">
+            A glimpse into our workshops, innovations, and hands-on sessions.
+          </p>
+        </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-2 md:grid-cols-2  lg:grid-cols-3 gap-3 md:gap-4">
-          {/* Big Featured Video */}
-          <div className="sm:col-span-2 lg:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-lg">
-            <video
-              src={sample1}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
-            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition">
-              <h3 className="text-lg font-semibold">Artifical Intelligence</h3>
-              <p className="text-sm">WorkShop @ TechnovaHub  • 2025</p>
-            </div>
-          </div>
-
-          {/* Smaller Videos */}
-          {[sample2, sample3, sample4, sample5].map((video, i) => (
-            <div
-              key={i}
-              className="relative group overflow-hidden rounded-2xl shadow-lg"
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {videos.map((video, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className={`relative group overflow-hidden rounded-2xl shadow-lg border border-white/20 bg-white/5 backdrop-blur-md ${
+                video.big ? "col-span-2 row-span-2" : ""
+              }`}
             >
+              {/* Video */}
               <video
-                src={video}
+                src={video.src}
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
-              <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition">
-                <p className="text-sm font-medium">AI {i + 1}</p>
+
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-all duration-500"></div>
+
+              {/* Glow Border */}
+              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-blue-500/50 transition-all duration-500"></div>
+
+              {/* Text Overlay */}
+              <div className="absolute bottom-5 left-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <h3 className="text-white text-lg md:text-xl font-semibold drop-shadow-md">
+                  {video.title}
+                </h3>
+                <p className="text-gray-200 text-sm">{video.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

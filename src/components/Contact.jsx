@@ -1,4 +1,5 @@
 import React from "react";
+import EnquiryForm from "./EnquiryForm";
 
 const contactInfo = [
   {
@@ -23,11 +24,14 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 ">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
             Ready to Start?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -35,51 +39,50 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Card */}
-        <div className="bg-white/80 backdrop-blur-md shadow-xl border border-gray-200 rounded-2xl p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-              Contact Us
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* LEFT SIDE - Info */}
+          <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-10 border border-gray-100 hover:shadow-blue-200 transition-all duration-500">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Get in Touch
             </h3>
-            <p className="text-gray-600">
-              Get in touch to enroll or ask any questions.
+            <p className="text-gray-600 mb-8">
+              Have questions or want to join our AI workshops? Reach out and we’ll
+              guide you through the next steps.
             </p>
-          </div>
 
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <a
-                key={index}
-                href={info.href}
-                target={info.icon === "🌐" ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 hover:bg-blue-50 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-2xl">
-                  {info.icon}
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-500">{info.label}</p>
-                  <p className="text-gray-800 text-[10px] lg:text-xl font-medium">{info.value}</p>
-                </div>
-              </a>
-            ))}
-          </div>
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <a
+                  key={index}
+                  href={info.href}
+                  target={info.icon === "🌐" ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 hover:border-blue-400 hover:bg-blue-50/40 transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-white text-2xl flex items-center justify-center shadow-md">
+                    {info.icon}
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">{info.label}</p>
+                    <p className="text-gray-800 text-lg font-semibold">
+                      {info.value}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
 
-          {/* Footer */}
-          <div className="mt-10 pt-6 border-t border-gray-200 text-center">
-            <p className="text-gray-600 flex items-center justify-center gap-2">
+            <div className="mt-10 text-center text-gray-600 border-t border-gray-200 pt-6">
               📍 Serving students across India with online AI education
-            </p>
+              <p className="text-blue-600 font-semibold mt-2 text-sm">
+                🚀 Limited seats available — Enroll today!
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* CTA Note */}
-        <div className="text-center mt-8">
-          <p className="text-blue-600 font-medium text-sm">
-            🚀 Limited seats available. Enroll today to secure your spot!
-          </p>
+          {/* RIGHT SIDE - Form */}
+          <EnquiryForm />
         </div>
       </div>
     </section>
