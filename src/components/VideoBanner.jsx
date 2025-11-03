@@ -16,7 +16,7 @@ const videos = [
 
 const VideoBanner = () => {
   return (
-    <section className="relative py-16 px-6 mt-[100px] overflow-hidden">
+    <section className="relative py-16 md:px-6  md:mt-[100px] overflow-hidden">
       {/* Light Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.1),transparent_60%)]"></div>
 
@@ -26,7 +26,7 @@ const VideoBanner = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">
             Experience the{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Future of AI
+              Future of AI Agent
             </span>
           </h2>
           <p className="text-gray-600">

@@ -10,13 +10,18 @@ import Contact from '../components/Contact'
 const Landingpage = () => {
   return (
     <div className='max-w-7xl mx-auto'>
-        <VideoBanner/>
-        <WhatYouWillGain/>
-        <Takeaways/>
+       <Contact/>
         <PricingCard/>
-        <Eligibility/>
+          <Eligibility/>
+           <WhatYouWillGain/>
+        <Takeaways/>
+        <VideoBanner/>
+        
        
-        <Contact/>
+       
+      
+       
+       
       
     </div>
   )
