@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50"
+      className="py-16 md:py-24  mt-10 bg-gradient-to-br from-blue-50 via-white to-purple-50"
     >
       <div className="max-w-6xl mx-auto  sm:px-6 lg:px-8">
         {/* Header */}
@@ -41,7 +41,7 @@ const Contact = () => {
           <h2 className="bg-gradient-to-r from-blue-600 md:text-5xl text-3xl font-bold  to-purple-600 bg-clip-text text-transparent">
             Ready to Start?
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base mt-2 md:text-lg max-w-2xl mx-auto">
             Join hundreds of students already transforming their future with AI.
           </p>
         </motion.div>
