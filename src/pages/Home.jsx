@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import adsImg from "../assets/oldad.jpg";
+import adsImg from "../assets/newads.jpg";
 
 const Home = () => {
   return (
