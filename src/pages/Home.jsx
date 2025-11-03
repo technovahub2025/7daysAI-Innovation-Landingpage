@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import adsImg from "../assets/newads.jpg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -32,14 +33,14 @@ const Home = () => {
             Experience our latest offer and make your everyday moments extraordinary.
           </p>
 
-          <motion.a
+          <motion.Link
             href="/welcome"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
           >
           Enroll now
-          </motion.a>
+          </motion.Link>
         </div>
       </motion.div>
     </section>
