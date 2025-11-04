@@ -57,7 +57,7 @@ const handleSubmit = (e) => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl sm:text-3xl text-left font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
+        className="text-xl sm:text-3xl text-left font-extrabold text-center mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
       >
         Enquiry Form
       </motion.h2>
@@ -75,7 +75,7 @@ const handleSubmit = (e) => {
             autoComplete="off"
             required
             placeholder=" "
-            className="peer w-full px-4 pt-5 pb-2 rounded-xl border border-blue-100 bg-white/70 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
+            className="peer w-full px-4 pt-5 pb-1 rounded-xl border border-blue-100 bg-white/70 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
           />
           <label
             htmlFor="name"

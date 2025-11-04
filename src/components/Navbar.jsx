@@ -52,7 +52,7 @@ const Navbar = () => {
           : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto  md:px-10 flex items-center justify-between h-16">
         {/* ✅ Logo */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -60,7 +60,7 @@ const Navbar = () => {
           className="flex items-center gap-2"
         >
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Technovahub" className="w-8 h-8 md:w-10 md:h-10" />
+            <img src={logo} alt="Technovahub" className="w-[120px] h-[100px] md:w-[130px] md-h-[130px] " />
             <span className="text-lg md:text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Technovahub
             </span>
