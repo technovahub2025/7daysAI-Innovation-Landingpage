@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = ({
-  phone = "919360962680", // with country code
+  phone = "918438431000", // with country code
   message = "I am interested in the 7 Days Workshop",
   fixed = false, // true = floating button
 }) => {

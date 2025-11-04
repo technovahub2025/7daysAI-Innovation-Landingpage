@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: "📞",
     label: "Phone",
-    value: "+91 93609 62680",
-    href: "tel:+919360962680",
+    value: "+91 8438431000",
+    href: "tel:+918438431000",
   },
   {
     icon: "📧",
