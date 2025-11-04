@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import adsImg from "../assets/newads.jpg";
 import { Link } from "react-router-dom";
 
+const MotionLink = motion(Link); // ✅ wrap Link for animation
+
 const Home = () => {
   return (
-    <section className="relative flex flex-col items-center  max-w-7xl mx-auto justify-center min-h-screen  overflow-hidden px-4">
+    <section className="relative flex flex-col items-center max-w-7xl mx-auto justify-center min-h-screen overflow-hidden px-4">
       {/* Decorative gradient glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-purple-200/40 to-pink-200/40 blur-3xl -z-10" />
 
@@ -33,14 +35,14 @@ const Home = () => {
             Experience our latest offer and make your everyday moments extraordinary.
           </p>
 
-          <motion.Link
-            href="/welcome"
+          <MotionLink
+            to="/welcome" // ✅ use 'to' instead of 'href'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
           >
-          Enroll now
-          </motion.Link>
+            Enroll now
+          </MotionLink>
         </div>
       </motion.div>
     </section>
