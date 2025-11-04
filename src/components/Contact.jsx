@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 md:py-28 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden"
+      className="relative py-20 md:py-28 mt-[-70px] overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10">
@@ -37,20 +37,20 @@ const Contact = () => {
 
       <div className="max-w-6xl mx-auto px-2 sm:px-8">
         {/* Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
             Get in Touch with Technovahub 🚀
           </h2>
           <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
             Whether you’re ready to join our AI programs or just exploring — we’d love to hear from you.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
