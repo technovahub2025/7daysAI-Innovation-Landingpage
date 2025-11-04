@@ -30,7 +30,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <div className=" bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen">
+    <div className=" bg-white min-h-screen">
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 const EnquiryForm = () => {
   const [form, setForm] = useState({
@@ -31,20 +32,21 @@ const EnquiryForm = () => {
       message: "",
       agree: false,
     });
-    setTimeout(() => setSubmitted(false), 3000);
   };
 
+  const closeModal = () => setSubmitted(false);
+
   return (
-    <div className="relative max-w-lg mx-auto rounded-3xl border border-white/30 bg-blue-50 backdrop-blur-2xl p-8  shadow-[0_8px_32px_rgba(31,38,135,0.2)] overflow-hidden">
-      {/* Animated gradient border effect */}
-      <div className="absolute inset-0 rounded-3xl border-[1px] border-transparent bg-gray-200 opacity-70 blur-xl -z-10"></div>
+    <div className="relative max-w-lg mx-auto  overflow-hidden">
+      {/* Animated gradient border */}
+   
 
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl sm:text-4xl font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent drop-shadow-sm"
+        className="text-3xl sm:text-3xl text-left font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
       >
         Enquiry Form
       </motion.h2>
@@ -54,26 +56,17 @@ const EnquiryForm = () => {
         {["name", "email", "mobile"].map((field) => (
           <div key={field} className="relative">
             <input
-              type={
-                field === "email"
-                  ? "email"
-                  : field === "mobile"
-                  ? "tel"
-                  : "text"
-              }
+              type={field === "email" ? "email" : field === "mobile" ? "tel" : "text"}
               name={field}
               value={form[field]}
               onChange={handleChange}
               autoComplete="off"
               required
               placeholder=" "
-              className="peer w-full px-4 pt-5 pb-2 rounded-xl border border-white/40 bg-white/40 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
+              className="peer w-full px-4 pt-5 pb-2 rounded-xl border border-blue-100 bg-white/70 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
             />
             <label
-              className="absolute left-4 top-2 text-gray-600 text-sm transition-all
-              peer-placeholder-shown:top-4 peer-placeholder-shown:text-base
-              peer-placeholder-shown:text-gray-500
-              peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-600"
+              className="absolute left-4 top-2 text-gray-600 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-600"
             >
               {field === "name"
                 ? "Full Name"
@@ -84,7 +77,6 @@ const EnquiryForm = () => {
           </div>
         ))}
 
-        {/* Message Field */}
         <div className="relative">
           <textarea
             name="message"
@@ -93,19 +85,15 @@ const EnquiryForm = () => {
             required
             rows="4"
             placeholder=" "
-            className="peer w-full px-4 pt-5 pb-2 rounded-xl border border-white/40 bg-white/40 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg resize-none focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
+            className="peer w-full px-4 pt-5 pb-2 rounded-xl border border-blue-100 bg-white/80 backdrop-blur-md text-gray-900 placeholder-transparent focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-base sm:text-lg resize-none focus:shadow-[0_0_15px_rgba(147,51,234,0.3)]"
           ></textarea>
           <label
-            className="absolute left-4 top-2 text-gray-600 text-sm transition-all
-            peer-placeholder-shown:top-4 peer-placeholder-shown:text-base
-            peer-placeholder-shown:text-gray-500
-            peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-600"
+            className="absolute left-4 top-2 text-gray-600 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-600"
           >
-            Your Message
+            Your Message (Optional)
           </label>
         </div>
 
-        {/* Terms and Conditions */}
         <div className="flex items-start gap-3">
           <input
             type="checkbox"
@@ -122,7 +110,6 @@ const EnquiryForm = () => {
           </p>
         </div>
 
-        {/* Submit Button */}
         <motion.button
           whileHover={{
             scale: 1.05,
@@ -136,17 +123,34 @@ const EnquiryForm = () => {
         </motion.button>
       </form>
 
-      {/* Success Message with Animation */}
+      {/* Animated Success Modal */}
       <AnimatePresence>
         {submitted && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.4 }}
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-full shadow-lg text-sm sm:text-base font-semibold backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50"
           >
-            ✅ Enquiry submitted successfully!
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl shadow-2xl p-8 w-[90%] max-w-sm text-center"
+            >
+              <CheckCircle className="mx-auto text-green-500" size={64} />
+              <h3 className="text-2xl font-semibold mt-4 text-gray-800">Done</h3>
+              <p className="text-gray-600 mt-1">Submitted Successfully!</p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={closeModal}
+                className="mt-6 px-8 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow-md hover:bg-blue-700 transition"
+              >
+                OK
+              </motion.button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

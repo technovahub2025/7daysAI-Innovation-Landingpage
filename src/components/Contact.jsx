@@ -71,7 +71,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="bg-gradient-to-br from-white/80 to-purple-50/50 backdrop-blur-xl border border-gray-100 shadow-lg rounded-2xl p-6 sm:p-8"
           >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-5 text-center lg:text-left">
+            <h3 className="text-3xl sm:text-3xl text-left font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
               Contact Details
             </h3>
             <p className="text-gray-600 mb-8 text-center lg:text-left leading-relaxed text-base sm:text-lg">
