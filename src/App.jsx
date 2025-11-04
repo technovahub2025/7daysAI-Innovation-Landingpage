@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Landingpage from "./pages/Landingpage";
-import Navbar from "./components/Navbar";
+
 import WhatsAppButton from "./components/WhatsAppButton";
 
 // Wrapper to handle conditional Navbar
@@ -16,7 +16,7 @@ const AppContent = () => {
     <>
      {!hideNavbar && (
   <>
-    <Navbar />
+   
     <WhatsAppButton fixed />
   </>
 )}
@@ -30,7 +30,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <div className="p-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen">
+    <div className=" bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen">
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>
