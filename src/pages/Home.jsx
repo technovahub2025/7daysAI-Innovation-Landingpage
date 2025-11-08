@@ -27,23 +27,26 @@ const Home = () => {
         </div>
 
         {/* Text & CTA */}
-        <div className="mt-8 space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">
-            Discover What’s New!
-          </h1>
-          <p className="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
-            Experience our latest offer and make your everyday moments extraordinary.
-          </p>
+     <div className="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+  <MotionLink
+    to="https://technovahub.in" // ✅ external link
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
+  >
+    Go to Website
+  </MotionLink>
 
-          <MotionLink
-            to="/welcome" // ✅ use 'to' instead of 'href'
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
-          >
-            Enroll now
-          </MotionLink>
-        </div>
+  <MotionLink
+    to="/welcome" // ✅ internal route
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
+  >
+    Enroll Now
+  </MotionLink>
+</div>
+
       </motion.div>
     </section>
   );
